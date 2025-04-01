@@ -31,7 +31,7 @@ function SignIn2() {
 
     const handleSignIn = async () => {
         try {
-          const response = await axios.post(`${process.env.REACT_APP_API_URL}/signin`, {
+          const response = await axios.post(`${import.meta.env.VITE_API_URL}/signin`, {
             Email: email,
             PasswordHash: password,
           });
@@ -44,7 +44,7 @@ function SignIn2() {
               localStorage.setItem('user', JSON.stringify(response.data[0]));
             console.log(JSON.stringify(response.data[0]));
           setErrorMessage('User logged In successfully');
-          window.open(`${process.env.REACT_APP_FRONT_API_URL}/`,"_self");
+          window.open(`${import.meta.env.VITE_FRONT_API_URL}/`,"_self");
           }
         } catch (error) {
           // Handle error responses from the server

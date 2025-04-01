@@ -24,7 +24,8 @@ function Movie() {
     };
 
     const handleSearch = async () => {
-        fetch(`${process.env.REACT_APP_API_URL}/movies`)
+        // fetch(`${import.process.env.REACT_APP_API_URL}/movies`)
+        fetch(`${import.meta.env.VITE_API_URL}/movies`)
         .then((response) => response.json())
         .then((json) =>{
             if(search1 === "All"){
@@ -60,7 +61,7 @@ function Movie() {
                 setPrice(count*350);
             }
             try{
-                const response = await axios.post(`${process.env.REACT_APP_API_URL}/movieTick`,{
+                const response = await axios.post(`${import.meta.env.VITE_API_URL}/movieTick`,{
                    Title: title,
                    Genre: genre,
                    Price: price,
@@ -203,7 +204,7 @@ function Movie() {
                             
                             return(
                                
-                                    <div className="post">
+                                    <div  className="post">
                                     <img src={m.link} height="300px" />
                                     <h4>{m.title}</h4>
                                      <BookingApp title={m.title} genre={m.genre} className='bookingBox'/>
@@ -229,7 +230,7 @@ function Movie() {
                             if(m.genre === "Romance"){
                             return(
                                
-                                    <div className="post">
+                                    <div key={m.id} className="post">
                                     <img src={m.link} height="300px" />
                                     <h4>{m.title}</h4>
                                     <BookingApp title={m.title} genre={m.genre} className='bookingBox'/>
@@ -248,9 +249,10 @@ function Movie() {
                     {
                         movies.map(m=>{
                             if(m.genre === "Action"){
+                                
                             return(
                                
-                                    <div className="post">
+                                    <div  className="post">
                                     <img src={m.link} height="300px" />
                                     <h4>{m.title}</h4>
                                     <BookingApp title={m.title} genre={m.genre} className='bookingBox'/>
@@ -272,7 +274,7 @@ function Movie() {
                             if(m.genre === "Adventure"){
                             return(
                                
-                                    <div className="post">
+                                    <div  className="post">
                                     <img src={m.link} height="300px" />
                                     <h4>{m.title}</h4>
                                     <BookingApp title={m.title} genre={m.genre} className='bookingBox'/>

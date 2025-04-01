@@ -9,7 +9,7 @@ function App() {
   const auth = React.useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/users`)
+    fetch(`${import.meta.env.VITE_API_URL}/users`)
       .then((res) => res.json())
       .then((users) => setData(users))
       .catch((err) => console.log(err));
@@ -18,7 +18,7 @@ function App() {
   const handleRemove = async () => {
     if (delEmail !== '') {
       try {
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/removeUser`, {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/removeUser`, {
           Email: delEmail,
         });
         if (response.status === 200) {

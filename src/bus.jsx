@@ -31,7 +31,7 @@ function Bus() {
       
       const handleTickets = async () => {
         try {
-          const response = await axios.post(`${process.env.REACT_APP_API_URL}/bus`, {
+          const response = await axios.post(`${import.meta.env.VITE_API_URL}/bus`, {
             Buyer: buyername,
             Email: email,
             Contact: contact,

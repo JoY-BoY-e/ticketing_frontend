@@ -23,7 +23,7 @@ function Tour() {
     };
 
     const handleSearch = async () => {
-        fetch(`${process.env.REACT_APP_API_URL}/tours`)
+        fetch(`${import.meta.env.VITE_API_URL}/tours`)
         .then((response) => response.json())
         .then((json) =>{
             if(search1 === "All"){
@@ -52,7 +52,7 @@ function Tour() {
            
            
             try{
-                const response = await axios.post(`${process.env.REACT_APP_API_URL}/tourTick`,{
+                const response = await axios.post(`${import.meta.env.VITE_API_URL}/tourTick`,{
                    Title: title,   
                    Price: price,
                    Type: type,

@@ -62,7 +62,7 @@ function Tickets() {
   const handleRemove = async () => {
     if(delEmail !== ''){
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/removeTicket`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/removeTicket`, {
         Email: delEmail,
       });
       if (response.status === 200) {
