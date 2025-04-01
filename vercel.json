@@ -1,0 +1,56 @@
+{
+  "rewrites": [
+    {
+      "source": "/signup",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/signin",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/movie",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/events",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/bus",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/airline",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/trains",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tour",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/carRental",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/users",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tickets",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
